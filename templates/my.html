@@ -1,0 +1,26 @@
+<table>
+    <tr><th>Название</th><th>Год основания</th><th>Размер флота</th><th>Объем перевозок</th></tr>
+    {% for car in carriers %}  
+        <tr>
+            <td>{{car.name}}</td>
+            <td>{{car.founded}}</td>  
+            <td>{{car.planes}}</td>
+            <td>{{car.passengers}} млн.</td>
+        </tr>
+    {% endfor %}
+</table>
+
+{% filter truncate(50) %} 
+
+Python is probably one of the few programming languages which is both simple and powerful. 
+This is good for beginners as well as for experts, and more importantly, is fun to program with. This book aims to help you learn this wonderful language and show how to get things done quickly and painlessly - in effect 'The Anti-venom to your programming problems'.
+
+{% endfilter %} 
+{{ "Python is probably one of   the few programming languages which is both simple and powerful."|truncate(50) }}
+
+<nav>
+ {% for link in links %}
+	<p>{{ request.path }}<p/>
+	<a href="{{ link.link }}">{{link.title}}</a>
+ {% endfor %}
+<nav/>
